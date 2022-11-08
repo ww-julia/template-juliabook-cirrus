@@ -21,6 +21,7 @@ Click `Use this template` green button to copy this repository to your place.
 Open your repository settings => Pages => GitHub Pages
 => Build and deployment => Source, Select `GitHub actions`
 
+For deploying to GH pages, you must create a `GH_TOKEN` GitHub personal access token (PAT) with `repo` scope access in Cirrus CI.
 
 ## Auto update
 
