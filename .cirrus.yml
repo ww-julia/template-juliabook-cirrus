@@ -2,7 +2,7 @@ jupyter_book_task:
   env:
     JULIA_NUM_THREADS: auto
     JOBS: '2'
-    GH_TOKEN: ENCRYPTED[!1078f054312bec811f3cb42e1973eff643addb709c43e8d0efc8135472c94b58caa6f2941d0f961beedf5cdeebae2091!]
+    GH_TOKEN: ENCRYPTED[!f19399b7d74f554de0824bc7349dc63626e4e6e5575daf3357c8b7cb1de56e5a0ceb0b71575f2dea3b4b366165f7aa60!]
   auto_cancellation: true
   container:
     dockerfile: .ci/Dockerfile
