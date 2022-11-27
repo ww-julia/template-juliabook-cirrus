@@ -1,4 +1,4 @@
-FROM ghcr.io/sosiristseng/docker-jupyterbook:0.13.1.2
+FROM python:3.11-slim
 
 # Supress warning emitted by parallel
 ENV LANG C.UTF-8
@@ -18,7 +18,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Julia environment
 COPY Project.toml Manifest.toml ./
-# COPY src/ src # If you have this
+# COPY src/ src
 RUN julia --threads=auto --color=yes --project="" -e 'import Pkg; Pkg.add("IJulia"); Pkg.build("IJulia")' && \
     julia --threads=auto --color=yes --project=@. -e 'import Pkg; Pkg.instantiate()'
 
