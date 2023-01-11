@@ -10,7 +10,7 @@ ENV LC_ALL C.UTF-8
 # Julia
 ENV JULIA_PATH /usr/local/julia/
 ENV PATH $JULIA_PATH/bin:$PATH
-COPY --from=julia:1.8.4 ${JULIA_PATH} /usr/local/
+COPY --from=julia:1.8.5 ${JULIA_PATH} /usr/local/
 
 # Python dependencies e.g. matplotlib
 COPY requirements.txt .
