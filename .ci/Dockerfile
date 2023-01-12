@@ -1,4 +1,4 @@
-FROM sosiristseng/docker-jupyterbook:0.13
+FROM sosiristseng/docker-jupyterbook:0.13.1
 
 # Supress warning emitted by parallel
 ENV LANG C.UTF-8
@@ -19,7 +19,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Julia environment
 COPY Project.toml Manifest.toml ./
 # COPY src/ src
-RUN julia --threads=auto --color=yes --project="" -e 'import Pkg; Pkg.add("IJulia"); Pkg.build("IJulia")' && \
-    julia --threads=auto --color=yes --project=@. -e 'import Pkg; Pkg.instantiate()'
+RUN julia --threads=auto --color=yes --project=@. -e 'import Pkg; Pkg.instantiate(); Pkg.build("IJulia")'
 
 CMD ["jupyter-book"]
